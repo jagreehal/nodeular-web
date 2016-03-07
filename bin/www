@@ -1,4 +1,10 @@
 var http = require('http');
 var app = require('../index');
-http.createServer(app).listen(3000);
+http.createServer(app).listen(3000, function(err){
+  if (err){
+    console.log(err);
+    return false;
+  }
+  console.log('up!');
+});
 

@@ -8,8 +8,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-require('nodeular-module-a');
-require('nodeular-module-b');
+// mount other modules!
+require('nodeular-module-a')(app);
+require('nodeular-module-b')(app);
 
 app.use('/', require('./html'));
 app.use('/api', require('./api'));
